@@ -14,6 +14,7 @@ arguments
     X (:,:) double
     k (1, 1) {mustBePositive, mustBeInteger}
 end
+
 knnGraph = knngraph(X, k);
 
 % The mutual knn graph is a subgraph of the knn graph that only contains
