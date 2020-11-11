@@ -15,7 +15,7 @@ end
 % knnsearch includes self-distances, so we use k + 1 to get k neighbors
 neighbors = knnsearch(X, X, 'K', k + 1);
 
-% create a sparse adjacency matrix 
+% create a sparse adjacency matrix
 A = sparse(nObservations, nObservations);
 for i = 1:nObservations
     A(i, neighbors(i, :)) = 1;
