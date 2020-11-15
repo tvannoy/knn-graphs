@@ -95,5 +95,54 @@ classdef GraphTests < matlab.unittest.TestCase
             testCase.verifyThat(edges, IsSameSetAs(expectedEdges))
             testCase.verifyThat(edges, HasSize(size(expectedEdges)))
         end
+
+        function res = testPrecomputedIndexKNN(testCase)
+            import matlab.unittest.constraints.IsSameSetAs;
+            import matlab.unittest.constraints.HasSize;
+
+            % k for the index needs to be at least 1 greater than the desired k
+            % because the index includes self-edges
+            index = knnindex(testCase.data.OneDim, 5);
+
+            G = knngraph(index, 3, 'Precomputed', true);
+            edges = table2array(G.Edges(:, 1));
+
+            expectedEdges = [1, 9; 1, 2; 1, 6; 2, 1; 2, 6; 2, 9; 
+                3, 7; 3, 4; 3, 6; 4, 3; 4, 7; 4, 6; 5, 8; 5, 4; 5, 3;
+                6, 2; 6, 7; 6, 1; 7, 3; 7, 6; 7, 2; 8, 5; 8, 4; 8, 3;
+                9, 1; 9, 2; 9, 6];
+
+            testCase.verifyThat(edges, IsSameSetAs(expectedEdges))
+            testCase.verifyThat(edges, HasSize(size(expectedEdges)))
+
+        end
+
+        function res = testPrecomputedIndexMutualKNN(testCase)
+            import matlab.unittest.constraints.IsSameSetAs;
+            import matlab.unittest.constraints.HasSize;
+
+            % k for the index needs to be at least 1 greater than the desired k
+            % because the index includes self-edges
+            index = knnindex(testCase.data.OneDim, 8);
+
+            G = mutualknngraph(index, 3, 'Precomputed', true);
+            edges = table2array(G.Edges(:, 1));
+
+            expectedEdges = [1, 9; 1, 2; 1, 6; 2, 6; 2, 9; 6, 7; 3, 4; 3, 7; 5, 8];
+
+            testCase.verifyThat(edges, IsSameSetAs(expectedEdges))
+            testCase.verifyThat(edges, HasSize(size(expectedEdges)))
+
+        end
+
+        function res = testKnnGraphErrorHandling(testCase)
+            import matlab.unittest.constraints.Throws
+
+            index = knnindex(testCase.data.OneDim, 3);
+
+            testCase.verifyThat(@() knngraph(index, 3, 'Precomputed', true), Throws("knngraph:kTooLarge"))
+
+            testCase.verifyThat(@() mutualknngraph(index, 3, 'Precomputed', true), Throws("knngraph:kTooLarge"))
+        end
     end
 end
