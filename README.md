@@ -38,13 +38,13 @@ Precomputing the knn search for 10 neighbors:
 ```matlab
 X = rand(50e3, 20);
 
-# by default, knn index creation includes self-edges, so use k+1
+% by default, knn index creation includes self-edges, so use k+1
 neighbors = knnindex(X, 11);
 
-# create 10-nearest neighbor graph
+% create 10-nearest neighbor graph
 G10 = knngraph(neighbors, 10);
 
-# create 4-nearest neighbor graph without recomputing the knn search
+% create 4-nearest neighbor graph without recomputing the knn search
 G4 = knngraph(neighbors, 4);
 ```
 
