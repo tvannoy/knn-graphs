@@ -4,13 +4,13 @@ MATLAB functions for creating k-nearest neighbor (knn) graphs.
 Many machine learning and data mining algorithms use k-nearest neighbor graphs. While MATLAB provides graph/digraph objects, it does not provide any high-level functions to create k-nearest neighbor graphs. The functions in this repo provide constructors for various k-nearest-neighbor-type graphs, which are returned as native MATLAB graph objects. 
 
 Available graph types:
-- k-nearest neighbor
-- mutual k-nearest neighbor
+- k-nearest neighbor (`knngraph`)
+- mutual k-nearest neighbor (`mutualknngraph`)
 
 ## Performance considerations
 The most expensive part of knn graph creation is the knn search. In a lot of cases, MATLAB's [knnsearch](https://www.mathworks.com/help/stats/knnsearch.html) function performs an exhaustive search, which has a complexity of O(n^2) and is very time-consuming for large data. 
 
-The functions in this repo provide the option of using an approximate knn search to speed things up. As far as I'm aware, MATLAB does not provide a fast, approximate knn search function, so [pynndescent](https://github.com/lmcinnes/pynndescent) is used through MATLAB's Python language interface. An approximate knn search could be implemented in pure MATLAB, but there are so many approximate knn search algorithms in other languages already, so why not use them? :smile:
+The functions in this repo provide the option of using an approximate knn search to speed things up. As far as I'm aware, MATLAB does not provide a fast, approximate knn search function, so [pynndescent](https://github.com/lmcinnes/pynndescent) is used through MATLAB's Python language interface. An approximate knn search could be implemented in pure MATLAB, but there are so many approximate knn search algorithms in other languages already, so why not use them? :wink:
 
 ## Dependencies
 - Statistics and Machine Learning toolbox
