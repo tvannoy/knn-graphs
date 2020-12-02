@@ -37,6 +37,9 @@ function G = mutualknngraph(X, k, options)
 %
 %   See also KNNGRAPH, KNNINDEX
 
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2020 Trevor Vannoy
+
 arguments
     X (:,:) double
     k (1, 1) {mustBePositive, mustBeInteger}

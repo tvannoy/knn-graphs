@@ -31,6 +31,9 @@ function G = knngraph(X, k, options)
 %
 %   See also KNNINDEX, MUTUALKNNGRAPH
 
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2020 Trevor Vannoy
+
 % TODO: consider adding IncludeSelfEdges as an optional argument, like in knnIndexToGraphEdges. 
 
 arguments

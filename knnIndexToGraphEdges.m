@@ -13,6 +13,9 @@ function [sourceNodes, targetNodes] = knnIndexToGraphEdges(neighbors, options)
 %
 %   See also KNNINDEX
 
+% SPDX-License-Identifier: MIT
+% Copyright (c) 2020 Trevor Vannoy
+
 arguments
     neighbors (:,:) double
     options.IncludeSelfEdges = false
