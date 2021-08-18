@@ -46,6 +46,7 @@ G10 = knngraph(neighbors, 10);
 % create 4-nearest neighbor graph without recomputing the knn search
 G4 = knngraph(neighbors, 4);
 ```
+Since computing the knn index is the most expensive operation, precomputing it can save time if you need to build multiple graphs.
 
 For more detailed documentation and usage, see each function's help text. 
 
