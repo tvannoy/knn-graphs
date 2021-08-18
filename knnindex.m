@@ -22,7 +22,7 @@ function neighbors = knnindex(X, k, options)
 %
 %   See also KNNGRAPH
 
-% SPDX-License-Identifier: MIT
+% SPDX-License-Identifier: BSD-3-Clause
 % Copyright (c) 2020 Trevor Vannoy
 
 arguments
