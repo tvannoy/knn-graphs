@@ -1,3 +1,4 @@
+% SPDX-License-Identifier: BSD-3-Clause
 classdef GraphTests < matlab.unittest.TestCase
     properties (TestParameter)
         data = struct('OneDim', [1; 2; 5; 7; 13; 3; 4.5; 11.1; 0.3],...
