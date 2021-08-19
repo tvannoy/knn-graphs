@@ -1,4 +1,5 @@
 # knn-graphs
+[![View knn-graphs on File Exchange](https://www.mathworks.com/matlabcentral/images/matlab-file-exchange.svg)](https://www.mathworks.com/matlabcentral/fileexchange/97919-knn-graphs)
 MATLAB functions for creating k-nearest neighbor (knn) graphs. 
 
 Many machine learning and data mining algorithms use k-nearest neighbor graphs. While MATLAB provides graph/digraph objects, it does not provide any high-level functions to create k-nearest neighbor graphs. The functions in this repo provide constructors for various k-nearest-neighbor-type graphs, which are returned as native MATLAB graph objects. 
