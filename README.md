@@ -14,6 +14,21 @@ The most expensive part of knn graph creation is the knn search. In a lot of cas
 
 The functions in this repo provide the option of using [pynndescent](https://github.com/lmcinnes/pynndescent), an approximate knn search, to speed things up. `pynndescent` is used through MATLAB's Python language interface. There is now a [MATLAB implementation of NN-descent](https://www.mathworks.com/matlabcentral/fileexchange/84535-nearest-neighbor-descent-nn-descent), but there was a memory leak when I last tried to use it.
 
+## Installation
+### Install with [mpm](https://github.com/mobeets/mpm):
+```
+mpm install knn-graphs
+```
+
+### Install from GitHub
+- Download the latest [release](https://github.com/tvannoy/knn-graphs/archive/refs/tags/v1.0.zip)
+- Add the code to your MATLAB path
+
+### Install from the MATLAB File Exchange
+- Download the latest [release from the file exchange](https://www.mathworks.com/matlabcentral/mlc-downloads/downloads/ca8d1d70-f80c-4129-9cfd-39f97c4bcdfc/d0001ccc-6f06-4f70-bbd0-02b6713663fb/packages/zip)
+- Add the code to your MATLAB path
+
+
 ## Dependencies
 - Statistics and Machine Learning toolbox
 
